@@ -10,13 +10,15 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+      transition: Transition.fadeIn,
+      transitionDuration: 1200.milliseconds,
     ),
     GetPage(
       name: _Paths.SPLASH,
