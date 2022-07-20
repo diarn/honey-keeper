@@ -24,6 +24,7 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => SplashView(),
       binding: SplashBinding(),
+      transition: Transition.fadeIn,
     ),
   ];
 }

@@ -5,21 +5,23 @@ import 'package:honey_keeper/app/routes/app_pages.dart';
 class SplashController extends GetxController {
   @override
   void onInit() {
+    super.onInit();
+  }
+
+  setLayout() {
     SystemChrome.setEnabledSystemUIMode(
       SystemUiMode.manual,
       overlays: [
         SystemUiOverlay.top,
       ],
-    );
-    Future.delayed(1200.milliseconds, () {
-      SystemChrome.setEnabledSystemUIMode(
-        SystemUiMode.edgeToEdge,
-      ).then((value) {
-        Get.toNamed(Routes.HOME);
-        Get.delete<SplashController>();
+    ).then((value) {
+      Future.delayed(1200.milliseconds, () {
+        Get.offNamed(Routes.HOME);
+        // SystemChrome.setEnabledSystemUIMode(
+        //   SystemUiMode.edgeToEdge,
+        // );
       });
     });
-    super.onInit();
   }
 
   @override
