@@ -16,6 +16,18 @@ class MyColors {
         b: 0,
         g: 144,
       ).createMaterialColor();
+
+  static MaterialColor get errorColor => GenerateColor(
+        r: 211,
+        b: 47,
+        g: 47,
+      ).createMaterialColor();
+
+  static MaterialColor get textColor1 => GenerateColor(
+        r: 33,
+        b: 33,
+        g: 33,
+      ).createMaterialColor();
 }
 
 class GenerateColor {
