@@ -97,18 +97,20 @@ class MyButton extends StatelessWidget {
   final void Function() onTap;
   final String label;
   final Color labelColor;
+  final Color bgColor;
   const MyButton({
     Key? key,
     required this.onTap,
     required this.label,
     required this.labelColor,
+    required this.bgColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Material(
-      color: MyColors.primary.shade900,
+      color: bgColor,
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
@@ -135,18 +137,20 @@ class MyLoadingButton extends StatelessWidget {
   final void Function() onTap;
   final String label;
   final Color labelColor;
+  final Color bgColor;
   const MyLoadingButton({
     Key? key,
     required this.onTap,
     required this.label,
     required this.labelColor,
+    required this.bgColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Material(
-      color: Colors.grey,
+      color: bgColor,
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
         borderRadius: BorderRadius.circular(8),

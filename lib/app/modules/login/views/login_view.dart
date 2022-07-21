@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
+import 'package:honey_keeper/app/data/assets_value.dart';
 import 'package:honey_keeper/app/data/my_color.dart';
 import 'package:honey_keeper/app/data/my_values.dart';
 import 'package:honey_keeper/app/views/views/my_widget_view.dart';
@@ -9,9 +10,12 @@ import 'package:honey_keeper/app/views/views/my_widget_view.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
+  final AssetsValue _assetsValue = AssetsValue();
+  final MyValues _myValues = MyValues();
   @override
   Widget build(BuildContext context) {
     controller.onInit();
+    Size size = MediaQuery.of(context).size;
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -22,12 +26,27 @@ class LoginView extends GetView<LoginController> {
         statusBarIconBrightness: Brightness.dark,
       ),
       child: Scaffold(
+        backgroundColor: MyColors.primary.shade900,
         body: Stack(
           children: [
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 16,
+                      right: 16,
+                    ),
+                    child: Image.asset(
+                      _assetsValue.imgLogo,
+                      // scale: 0.7,
+                      width: size.width * 0.5,
+                    ),
+                  ),
+                  SizedBox(
+                    height: (_myValues.yContentSpace) * 2,
+                  ),
                   Padding(
                     padding: EdgeInsets.only(
                       left: 16,
@@ -96,11 +115,13 @@ class _LoginFormState extends State<LoginForm> {
                       },
                       label: "MASUK",
                       labelColor: MyColors.textColor1.shade900,
+                      bgColor: MyColors.primaryLight.shade500,
                     )
                   : MyLoadingButton(
                       onTap: () {},
                       label: "SEDANG LOADING",
                       labelColor: Colors.white,
+                      bgColor: Colors.grey,
                     );
             },
           ),
