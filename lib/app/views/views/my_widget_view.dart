@@ -172,3 +172,96 @@ class MyLoadingButton extends StatelessWidget {
     );
   }
 }
+
+class Card01 extends StatelessWidget {
+  final String label;
+  final String labelValue;
+  final String secondValue;
+  final double icHeight;
+  final double icWidth;
+  final IconData iconData;
+  final double contentPadding;
+  final Function() onTap;
+  const Card01({
+    Key? key,
+    required this.label,
+    required this.labelValue,
+    required this.secondValue,
+    required this.icHeight,
+    required this.icWidth,
+    required this.iconData,
+    required this.contentPadding,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(16),
+      color: Colors.white,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: onTap,
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            // color: Colors.white,
+          ),
+          child: Row(
+            children: [
+              Container(
+                height: icHeight,
+                width: icWidth,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.black,
+                ),
+                child: Icon(
+                  iconData,
+                  size: icHeight * 0.9,
+                  color: MyColors.primary.shade900,
+                ),
+              ),
+              SizedBox(
+                width: contentPadding,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Total $label",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    labelValue,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 35,
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Text(
+                  "$label telah dimaintenance: ",
+                  textAlign: TextAlign.end,
+                ),
+              ),
+              Text(
+                secondValue,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

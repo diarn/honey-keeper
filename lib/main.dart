@@ -16,7 +16,7 @@ void main() async {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: ThemeData(
-        textTheme: GoogleFonts.nunitoTextTheme(),
+        textTheme: GoogleFonts.assistantTextTheme(),
       ),
     ),
   );
