@@ -265,3 +265,64 @@ class Card01 extends StatelessWidget {
     );
   }
 }
+
+class Card02 extends StatelessWidget {
+  final String label;
+  final String image;
+  final double imageSize;
+  final String value1;
+  final String value2;
+  const Card02({
+    Key? key,
+    required this.label,
+    required this.image,
+    required this.imageSize,
+    required this.value1,
+    required this.value2,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        color: Colors.white,
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Image.asset(
+              image,
+              width: imageSize,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 28,
+                  ),
+                ),
+                Text(
+                  "$value1/$value2",
+                  style: TextStyle(
+                    fontSize: 42,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

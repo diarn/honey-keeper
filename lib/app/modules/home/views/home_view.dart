@@ -97,6 +97,74 @@ class HomeView extends GetView<HomeController> {
                       height: _myValues.yWidgetSpace,
                     ),
                     Padding(
+                      padding: EdgeInsets.only(
+                        left: 16,
+                        right: 16,
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                width: double.infinity,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Maintenance \nToday",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 28,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: _myValues.yWidgetSpace,
+                                    ),
+                                    Obx(() {
+                                      return Text(
+                                        controller.now.value,
+                                      );
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: _myValues.xWidgetSpace,
+                            ),
+                            Expanded(
+                              child: Container(
+                                height: 150,
+                                child: PageView(
+                                  physics: BouncingScrollPhysics(),
+                                  children: [
+                                    Card02(
+                                      label: "Box",
+                                      image: _assetsValue.imgBox,
+                                      imageSize: size.width * 0.2,
+                                      value1: "20",
+                                      value2: "50",
+                                    ),
+                                    Card02(
+                                      label: "Frame",
+                                      image: _assetsValue.imgFrame,
+                                      imageSize: size.width * 0.2,
+                                      value1: "139",
+                                      value2: "200",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _myValues.yContentSpace,
+                    ),
+                    Padding(
                       padding: const EdgeInsets.only(
                         left: 16,
                         right: 16,
@@ -264,7 +332,7 @@ class IconBottomBar2 extends StatelessWidget {
         icon: Icon(
           icon,
           // size: 25,
-          color: Colors.white,
+          color: MyColors.textColor1.shade800,
         ),
       ),
     );
