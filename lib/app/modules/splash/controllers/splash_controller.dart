@@ -4,7 +4,7 @@ import 'package:honey_keeper/app/controllers/user_controller.dart';
 import 'package:honey_keeper/app/routes/app_pages.dart';
 
 class SplashController extends GetxController {
-  var _userController = Get.put(UserController());
+  final _userController = Get.put(UserController());
   @override
   void onInit() {
     super.onInit();

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:honey_keeper/app/controllers/my_box_controller.dart';
+import 'package:honey_keeper/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
+  final MyBoxController _myBoxController = Get.find<MyBoxController>();
   final formKey = GlobalKey<FormState>();
   final TextEditingController userNameOrEmail = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -15,6 +18,7 @@ class LoginController extends GetxController {
         SystemUiMode.edgeToEdge,
       );
     });
+    // inspect(_userController.token.value);
     super.onInit();
   }
 
@@ -62,5 +66,10 @@ class LoginController extends GetxController {
   login() {
     isLogginIn.value = true;
     isLogginIn.refresh();
+    Future.delayed(2000.milliseconds, () {
+      _myBoxController.writeToken("token data value");
+    }).then((value) {
+      Get.offNamed(Routes.HOME);
+    });
   }
 }
