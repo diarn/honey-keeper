@@ -10,6 +10,7 @@ class LoginController extends GetxController {
   final TextEditingController userNameOrEmail = TextEditingController();
   final TextEditingController password = TextEditingController();
   final RxBool isLogginIn = false.obs;
+  final RxBool showPassword = false.obs;
 
   @override
   void onInit() {

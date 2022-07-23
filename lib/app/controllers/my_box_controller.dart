@@ -23,4 +23,8 @@ class MyBoxController extends GetxController {
   String readToken() {
     return box.read("token");
   }
+
+  removeToken() {
+    box.remove("token");
+  }
 }

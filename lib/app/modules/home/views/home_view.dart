@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
+import 'package:honey_keeper/app/controllers/my_box_controller.dart';
 import 'package:honey_keeper/app/data/assets_value.dart';
 import 'package:honey_keeper/app/data/my_color.dart';
 import 'package:honey_keeper/app/data/my_values.dart';
+import 'package:honey_keeper/app/routes/app_pages.dart';
 import 'package:honey_keeper/app/views/views/my_widget_view.dart';
 
 import '../controllers/home_controller.dart';
@@ -229,7 +231,9 @@ class HomeView extends GetView<HomeController> {
 }
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({Key? key}) : super(key: key);
+  BottomNavBar({Key? key}) : super(key: key);
+
+  final MyBoxController _myBoxController = Get.put(MyBoxController());
 
   @override
   Widget build(BuildContext context) {
@@ -262,7 +266,10 @@ class BottomNavBar extends StatelessWidget {
                   text: "Account",
                   icon: FluentIcons.home_person_24_regular,
                   selected: false,
-                  onPressed: () {}),
+                  onPressed: () {
+                    _myBoxController.removeToken();
+                    Get.offAllNamed(Routes.LOGIN);
+                  }),
               const Spacer(),
               IconBottomBar2(
                   text: "Home",

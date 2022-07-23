@@ -27,6 +27,7 @@ class GenerateMyForm extends StatelessWidget {
   final TextInputType inputType;
   final bool isObsecure;
   final String? Function(String?) validator;
+  final IconButton? iconButton;
   const GenerateMyForm({
     Key? key,
     required this.inputController,
@@ -35,6 +36,7 @@ class GenerateMyForm extends StatelessWidget {
     required this.inputType,
     required this.validator,
     required this.isObsecure,
+    this.iconButton,
   }) : super(key: key);
 
   @override
@@ -60,6 +62,7 @@ class GenerateMyForm extends StatelessWidget {
         style: const TextStyle(fontSize: 14, color: Colors.black),
         decoration: InputDecoration(
           label: Text(label),
+          suffixIcon: iconButton,
           labelStyle: TextStyle(color: MyColors.textColor1.shade900),
           filled: true,
           fillColor: Colors.white,
@@ -288,7 +291,7 @@ class Card02 extends StatelessWidget {
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white,
+        color: Colors.white30,
       ),
       child: Stack(
         children: [

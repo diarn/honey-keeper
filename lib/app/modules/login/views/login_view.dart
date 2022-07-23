@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -67,7 +68,7 @@ class LoginView extends GetView<LoginController> {
 }
 
 class LoginForm extends StatefulWidget {
-  final controller;
+  final LoginController controller;
   const LoginForm({
     Key? key,
     required this.controller,
@@ -95,14 +96,26 @@ class _LoginFormState extends State<LoginForm> {
             isObsecure: false,
           ),
           SizedBox(height: _myValues.yWidgetSpace),
-          GenerateMyForm(
-            inputController: widget.controller.password,
-            label: "Kata Sandi",
-            hintText: "Masukkan kata sandi Anda",
-            inputType: TextInputType.text,
-            validator: widget.controller.validator("Password"),
-            isObsecure: true,
-          ),
+          Obx(() {
+            return GenerateMyForm(
+              inputController: widget.controller.password,
+              label: "Kata Sandi",
+              hintText: "Masukkan kata sandi Anda",
+              inputType: TextInputType.text,
+              validator: widget.controller.validator("Password"),
+              isObsecure: !widget.controller.showPassword.value,
+              iconButton: IconButton(
+                onPressed: () {
+                  widget.controller.showPassword.value =
+                      !widget.controller.showPassword.value;
+                  widget.controller.showPassword.refresh();
+                },
+                icon: Icon(widget.controller.showPassword.value == false
+                    ? FluentIcons.eye_24_filled
+                    : FluentIcons.eye_off_24_filled),
+              ),
+            );
+          }),
           SizedBox(height: _myValues.yContentSpace),
           Obx(
             () {
