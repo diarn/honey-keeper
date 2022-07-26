@@ -9,6 +9,8 @@ import 'package:honey_keeper/app/data/my_color.dart';
 import 'package:honey_keeper/app/data/my_values.dart';
 import 'package:honey_keeper/app/routes/app_pages.dart';
 import 'package:honey_keeper/app/views/views/my_widget_view.dart';
+import 'package:intl/intl.dart';
+import 'package:timeline_tile/timeline_tile.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -94,6 +96,7 @@ class HomeView extends GetView<HomeController> {
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: _myValues.yWidgetSpace,
@@ -139,6 +142,7 @@ class HomeView extends GetView<HomeController> {
                               child: Container(
                                 height: 150,
                                 child: PageView(
+                                  controller: controller.pageController,
                                   physics: BouncingScrollPhysics(),
                                   children: [
                                     Card02(
@@ -213,6 +217,293 @@ class HomeView extends GetView<HomeController> {
                             ),
                           );
                         },
+                      ),
+                    ),
+                    SizedBox(
+                      height: _myValues.yContentSpace,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 16, right: 16),
+                      child: Text(
+                        "Aktifitas Saya",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: MyColors.textColor1,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _myValues.yWidgetSpace,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: Column(
+                        children: [
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            isFirst: true,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Officia laborum aliqua do laborum. Adipisicing aliquip aute ad pariatur et dolore excepteur ad officia magna non excepteur sint aute. Ex nostrud exercitation fugiat do non aliquip officia. Incididunt consectetur veniam elit incididunt ipsum.Anim excepteur eiusmod ex id ut irure.Dolor aliquip velit est cupidatat velit adipisicing. Pariatur duis non deserunt magna tempor et exercitation culpa magna id nulla. Laborum esse magna pariatur exercitation aliquip cillum laborum aute proident enim magna ex. Consequat id veniam adipisicing exercitation. Quis ipsum Lorem laborum non occaecat.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                          TimelineTile(
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0.2,
+                            isLast: true,
+                            startChild: Text(
+                              DateFormat.Hms().format(DateTime.now()),
+                            ),
+                            endChild: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 16, top: 8, bottom: 8),
+                              child: Text(
+                                "Occaecat sit officia commodo eu consequat elit ipsum velit dolore occaecat dolor incididunt id. Pariatur anim aliqua officia cupidatat in occaecat aliqua ea ullamco. Consequat incididunt enim enim nisi ex irure incididunt reprehenderit nostrud est do fugiat est. Enim dolor id nulla Lorem officia ea esse nulla occaecat veniam deserunt. Magna enim voluptate ex fugiat fugiat magna ipsum. Nostrud nisi ea laboris deserunt laborum ex. Ad duis cupidatat sint aliquip sunt ut dolore cillum ullamco fugiat do et culpa.",
+                              ),
+                            ),
+                            indicatorStyle: IndicatorStyle(
+                              iconStyle: IconStyle(
+                                iconData: Icons.circle,
+                                color: MyColors.textColor1,
+                                fontSize: 24,
+                              ),
+                              width: 24,
+                              color: MyColors.primaryLight,
+                            ),
+                            beforeLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                            afterLineStyle: LineStyle(
+                              color: MyColors.primaryLight,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(

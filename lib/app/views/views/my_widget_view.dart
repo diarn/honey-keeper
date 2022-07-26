@@ -1,6 +1,8 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:honey_keeper/app/data/my_color.dart';
+import 'package:honey_keeper/app/data/my_values.dart';
 
 class MyWidgetView extends GetView {
   @override
@@ -201,7 +203,7 @@ class Card01 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(16),
-      color: Colors.white,
+      color: Colors.white38,
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
         onTap: onTap,
@@ -249,16 +251,27 @@ class Card01 extends StatelessWidget {
                 ],
               ),
               Expanded(
-                child: Text(
-                  "$label telah dimaintenance: ",
-                  textAlign: TextAlign.end,
-                ),
+                child: SizedBox(),
               ),
-              Text(
-                secondValue,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+              Material(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(8),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(8),
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          FluentIcons.barcode_scanner_24_regular,
+                          size: 36,
+                        ),
+                        SizedBox(width: MyValues().xWidgetSpace),
+                        Text("SCAN"),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
