@@ -18,13 +18,12 @@ class SplashController extends GetxController {
       ],
     ).then((value) {
       Future.delayed(1200.milliseconds, () {
+        SystemChrome.setEnabledSystemUIMode(
+          SystemUiMode.edgeToEdge,
+        );
         _userController.token.value != ""
             ? Get.offNamed(Routes.HOME)
-            : Get.offNamed(Routes.LOGIN);
-
-        // if (_userController.token.value != "") {
-        // } else {
-        // }
+            : Get.offNamed(Routes.ON_BOARDING);
       });
     });
   }

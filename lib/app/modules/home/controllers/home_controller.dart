@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -28,11 +27,11 @@ class HomeController extends GetxController {
       now.value = DateFormat("EEEE, dd MMMM yyyy HH:mm:ss", "id").format(_temp);
       now.refresh();
     });
-    Future.delayed(2400.milliseconds, () {
-      SystemChrome.setEnabledSystemUIMode(
-        SystemUiMode.edgeToEdge,
-      );
-    });
+    // Future.delayed(2400.milliseconds, () {
+    //   SystemChrome.setEnabledSystemUIMode(
+    //     SystemUiMode.edgeToEdge,
+    //   );
+    // });
     super.onInit();
   }
 

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:honey_keeper/app/controllers/my_box_controller.dart';
 import 'package:honey_keeper/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
-  final MyBoxController _myBoxController = Get.find<MyBoxController>();
+  final MyBoxController _myBoxController = Get.put(MyBoxController());
   final formKey = GlobalKey<FormState>();
   final TextEditingController userNameOrEmail = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -14,11 +13,11 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    Future.delayed(1200.milliseconds, () {
-      SystemChrome.setEnabledSystemUIMode(
-        SystemUiMode.edgeToEdge,
-      );
-    });
+    // Future.delayed(1200.milliseconds, () {
+    //   SystemChrome.setEnabledSystemUIMode(
+    //     SystemUiMode.edgeToEdge,
+    //   );
+    // });
     // inspect(_userController.token.value);
     super.onInit();
   }
