@@ -14,6 +14,7 @@ dependencies:
   intl: 0.17.0
   timeline_tile: 2.0.0
   flutter_launcher_icons: 0.9.3
+  qr_code_scanner: 1.0.0
   flutter: 
     sdk: flutter
 
@@ -28,8 +29,8 @@ flutter:
     - assets/icons/
   uses-material-design: true
 
-flutter_icons:
-  android: "launcher_icon"
+flutter_icons: 
+  android: launcher_icon
+  image_path: assets/images/app icon.png
   ios: true
-  image_path: "assets/images/app icon.png"
 

@@ -21,7 +21,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    controller.onInit();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -563,10 +562,29 @@ class BottomNavBar extends StatelessWidget {
                   }),
               const Spacer(),
               IconBottomBar2(
-                  text: "Home",
-                  icon: FluentIcons.add_square_24_filled,
-                  selected: true,
-                  onPressed: () {}),
+                text: "Home",
+                icon: FluentIcons.add_square_24_filled,
+                selected: true,
+                onPressed: () {
+                  Get.dialog(
+                    Dialog01(
+                      image: AssetsValue().imgAppIcon,
+                      label: "Pilih Box / Frame",
+                      desc:
+                          "Silahkan pilih scan atau manual untuk menentukan box atau frame mana yang akan ditambahkan aktifitas",
+                      funText01: "Scan",
+                      funText02: "Manual",
+                      fun01: () {
+                        Get.back();
+                        Get.toNamed(Routes.SCAN);
+                      },
+                      fun02: () {
+                        Get.back();
+                      },
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),

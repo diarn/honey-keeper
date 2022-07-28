@@ -6,6 +6,8 @@ import 'package:honey_keeper/app/modules/login/bindings/login_binding.dart';
 import 'package:honey_keeper/app/modules/login/views/login_view.dart';
 import 'package:honey_keeper/app/modules/on_boarding/bindings/on_boarding_binding.dart';
 import 'package:honey_keeper/app/modules/on_boarding/views/on_boarding_view.dart';
+import 'package:honey_keeper/app/modules/scan/bindings/scan_binding.dart';
+import 'package:honey_keeper/app/modules/scan/views/scan_view.dart';
 import 'package:honey_keeper/app/modules/splash/bindings/splash_binding.dart';
 import 'package:honey_keeper/app/modules/splash/views/splash_view.dart';
 
@@ -42,6 +44,13 @@ class AppPages {
       page: () => OnBoardingView(),
       binding: OnBoardingBinding(),
       transition: Transition.size,
+      transitionDuration: 600.milliseconds,
+    ),
+    GetPage(
+      name: _Paths.SCAN,
+      page: () => ScanView(),
+      binding: ScanBinding(),
+      transition: Transition.fadeIn,
       transitionDuration: 600.milliseconds,
     ),
   ];

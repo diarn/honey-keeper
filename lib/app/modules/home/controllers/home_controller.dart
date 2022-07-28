@@ -11,6 +11,11 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     initializeDateFormatting();
+    Timer.periodic(1.seconds, (timer) {
+      DateTime _temp = DateTime.now();
+      now.value = DateFormat("EEEE, dd MMMM yyyy HH:mm:ss", "id").format(_temp);
+      now.refresh();
+    });
     Timer.periodic(3.seconds, (timer) {
       if (pageController.page == 0.0) {
         pageController.animateToPage(1,
@@ -22,16 +27,6 @@ class HomeController extends GetxController {
             duration: 1000.milliseconds, curve: Curves.easeIn);
       }
     });
-    Timer.periodic(1.seconds, (timer) {
-      DateTime _temp = DateTime.now();
-      now.value = DateFormat("EEEE, dd MMMM yyyy HH:mm:ss", "id").format(_temp);
-      now.refresh();
-    });
-    // Future.delayed(2400.milliseconds, () {
-    //   SystemChrome.setEnabledSystemUIMode(
-    //     SystemUiMode.edgeToEdge,
-    //   );
-    // });
     super.onInit();
   }
 
@@ -42,4 +37,6 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {}
+
+  void scan() {}
 }
